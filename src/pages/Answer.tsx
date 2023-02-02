@@ -10,7 +10,12 @@ const Answer = () => {
   console.log(quiz);
   return (
     <div>
-      <ListingCard title="Answer">
+      <ListingCard
+        title="Answer"
+        onAdd={function (): void {
+          throw new Error("Function not implemented.");
+        }}
+      >
         <div className="mb-5 font-medium text-xl">Question {quiz.id}</div>
         <div className="grid gap-7 mb-6 md:grid-cols-2 lg:grid-cols-2">
           {Array.from({ length: 5 }).map((_, index) => (

@@ -1,12 +1,19 @@
+import { useState } from "react";
 import ListingCard from "../components/ListingCard";
 import { useNavigate } from "react-router-dom";
+import AddQuestion from "../components/questions/AddQuestion";
 
 const Home = () => {
   const navigate = useNavigate();
+  const [openAddQuestion, setOpenAddQuestion] = useState<boolean>(false);
 
   return (
     <div>
-      <ListingCard title="Questions">
+      <AddQuestion
+        open={openAddQuestion}
+        close={() => setOpenAddQuestion(false)}
+      />
+      <ListingCard title="Questions" onAdd={() => setOpenAddQuestion(true)}>
         <div className="grid gap-7 mb-6 md:grid-cols-5 lg:grid-cols-5">
           {Array.from({ length: 120 }).map((_, index) => (
             <div

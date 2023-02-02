@@ -1,6 +1,12 @@
 import React from "react";
 
-const ListingCard = (props) => {
+interface Props {
+  onAdd(): void;
+  title: string;
+  children: JSX.Element[] | JSX.Element;
+}
+
+const ListingCard = (props: Props) => {
   return (
     <div>
       <div className="bg-violet-100 rounded-lg border-violet-200 border">
