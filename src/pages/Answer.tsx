@@ -11,12 +11,16 @@ const Answer = () => {
   return (
     <div>
       <ListingCard
-        title="Answer"
+        title="Question & Answers"
         onAdd={function (): void {
           throw new Error("Function not implemented.");
         }}
       >
-        <div className="mb-5 font-medium text-xl">Question {quiz.id}</div>
+        <div className="mb-8">
+          <div className="mb-3 font-thin text-xl">Question</div>
+          <div className="bg-white text-xl rounded-lg p-5 font-bold">{localStorage.question}</div>
+        </div>
+        <div className="mb-3 font-thin text-xl">Answers</div>
         <div className="grid gap-7 mb-6 md:grid-cols-2 lg:grid-cols-2">
           {Array.from({ length: 5 }).map((_, index) => (
             <div className="bg-white rounded-lg p-5" key={index}>
