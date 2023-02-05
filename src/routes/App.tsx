@@ -12,11 +12,11 @@ export const isAuthenticated = () => {
     const decoded: any = jwt_decode(localStorage.token);
     const currentDate = new Date();
     if (decoded.exp * 1000 < currentDate.getTime()) {
-      return; //Token is expired
+      return false; //Token is expired
     }
-    return decoded;
+    return true;
   } catch (e) {
-    return;
+    return false;
   }
 };
 
