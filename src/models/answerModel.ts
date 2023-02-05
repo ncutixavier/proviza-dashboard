@@ -1,15 +1,15 @@
 import { SerializedError } from "@reduxjs/toolkit";
 
-export interface QuestionState {
+export interface AnswerState {
   error?: SerializedError;
   data: any;
   loading: boolean;
 }
 
-export interface QuestionPayload {
-  question: string;
-  category: string;
+export interface AnswerPayload {
+  answer: string;
+  image?: string;
+  is_correct: boolean;
   createdAt: string;
   updatedAt: string;
-  image?: string;
 }

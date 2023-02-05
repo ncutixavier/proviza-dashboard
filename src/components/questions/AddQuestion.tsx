@@ -11,6 +11,7 @@ import toast from "react-hot-toast";
 import { createQuestion } from "../../features/createQuestionSlice";
 import { serverTimestamp } from "firebase/firestore";
 import { getQuestions } from "../../features/getQuestionsSlice";
+import PZTextInput from "../form/PZTextInput";
 
 interface Props {
   open: boolean;
@@ -75,6 +76,11 @@ const AddQuestion = (props: Props) => {
             {...register("question")}
             error={errors.question}
             placeholder="Type the new question..."
+          />
+          <PZTextInput
+            label={"Image (Optional)"}
+            {...register("image")}
+            placeholder="Add an image..."
           />
           <PZSelect
             label={"Categories"}
